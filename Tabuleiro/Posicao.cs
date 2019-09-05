@@ -11,13 +11,13 @@ namespace Tabuleiro
 
         public Posicao(int linha, int coluna)
         {
-            this.Linha = linha;
-            this.Coluna = coluna;
+            Linha = linha;
+            Coluna = coluna;
         }
 
         public override string ToString()
         {
-            return "( " + Linha + ", " + Coluna + ")";
+            return Linha + ", " + Coluna;
         }
     }
 }

@@ -6,11 +6,13 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            Posicao posicao;
+            
 
-            posicao = new Posicao(3, 4);
+            Mesa mesa = new Mesa(8, 8);
 
-            Console.WriteLine(posicao);
+            Tela.ImprimirTabuleiro(mesa);
+
+            Console.WriteLine();
 
         }
     }
