@@ -11,13 +11,13 @@ namespace Xadrez
             {
                 for(int j = 0; j < mesa.Colunas; j++)
                 {
-                    if(mesa.PosicaoPecas(i, j) == null)
+                    if(mesa.IniciaPecas(i, j) == null)
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        Console.Write(mesa.PosicaoPecas(i, j) + " ");
+                        Console.Write(mesa.IniciaPecas(i, j) + " ");
                     }
                     
                 }
