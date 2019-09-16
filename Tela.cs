@@ -7,22 +7,50 @@ namespace Xadrez
     {
         public static void ImprimirTabuleiro(Mesa mesa)
         {
+            ConsoleColor background = Console.BackgroundColor;
+
             for (int i = 0; i < mesa.Linhas; i++)
             {
+                
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.Write(8 - i + " ");
+                Console.BackgroundColor = background;
                 for(int j = 0; j < mesa.Colunas; j++)
                 {
                     if(mesa.IniciaPecas(i, j) == null)
                     {
-                        Console.Write("- ");
+                        Console.Write(" -");
                     }
                     else
                     {
-                        Console.Write(mesa.IniciaPecas(i, j) + " ");
+                        Console.Write(" ");
+                        ImprimePecas(mesa.IniciaPecas(i, j));
+                        
                     }
                     
                 }
                 Console.WriteLine();
             }
+            
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("   a b c d e f g h");
+            Console.BackgroundColor = background;
         }
+
+        public static void ImprimePecas(Peca peca)
+        {
+            if (peca.Cor == Cor.Branca)
+            {
+                Console.Write(peca);
+            }
+            else
+            {
+                ConsoleColor color = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.Write(peca);
+                Console.ForegroundColor = color;
+            }
+        }
+
     }
 }

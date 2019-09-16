@@ -1,6 +1,7 @@
 ﻿using System;
 using Tabuleiro;
 using Jogabilidade;
+using Erros;
 
 namespace Xadrez
 {
@@ -12,7 +13,7 @@ namespace Xadrez
             {
 
                 Mesa mesa = new Mesa(8, 8);
-
+                
                 mesa.ColocarPeca(new Torre(mesa, Cor.Preta), new Posicao(0, 0));
                 mesa.ColocarPeca(new Cavalo(mesa, Cor.Preta), new Posicao(0, 1));
                 mesa.ColocarPeca(new Bispo(mesa, Cor.Preta), new Posicao(0, 2));
@@ -31,23 +32,23 @@ namespace Xadrez
                 mesa.ColocarPeca(new Peao(mesa, Cor.Preta), new Posicao(1, 7));
 
 
-                mesa.ColocarPeca(new Torre(mesa, Cor.Amarela), new Posicao(7, 0));
-                mesa.ColocarPeca(new Cavalo(mesa, Cor.Amarela), new Posicao(7, 1));
-                mesa.ColocarPeca(new Bispo(mesa, Cor.Amarela), new Posicao(7, 2));
-                mesa.ColocarPeca(new Rei(mesa, Cor.Amarela), new Posicao(7, 3));
-                mesa.ColocarPeca(new Rainha(mesa, Cor.Amarela), new Posicao(7, 4));
-                mesa.ColocarPeca(new Bispo(mesa, Cor.Amarela), new Posicao(7, 5));
-                mesa.ColocarPeca(new Cavalo(mesa, Cor.Amarela), new Posicao(7, 6));
-                mesa.ColocarPeca(new Torre(mesa, Cor.Amarela), new Posicao(7, 7));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 0));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 1));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 2));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 3));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 4));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 5));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 6));
-                mesa.ColocarPeca(new Peao(mesa, Cor.Amarela), new Posicao(6, 7));
-
+                mesa.ColocarPeca(new Torre(mesa, Cor.Branca), new Posicao(7, 0));
+                mesa.ColocarPeca(new Cavalo(mesa, Cor.Branca), new Posicao(7, 1));
+                mesa.ColocarPeca(new Bispo(mesa, Cor.Branca), new Posicao(7, 2));
+                mesa.ColocarPeca(new Rei(mesa, Cor.Branca), new Posicao(7, 3));
+                mesa.ColocarPeca(new Rainha(mesa, Cor.Branca), new Posicao(7, 4));
+                mesa.ColocarPeca(new Bispo(mesa, Cor.Branca), new Posicao(7, 5));
+                mesa.ColocarPeca(new Cavalo(mesa, Cor.Branca), new Posicao(7, 6));
+                mesa.ColocarPeca(new Torre(mesa, Cor.Branca), new Posicao(7, 7));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 0));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 1));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 2));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 3));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 4));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 5));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 6));
+                mesa.ColocarPeca(new Peao(mesa, Cor.Branca), new Posicao(6, 7));
+                
 
                 Tela.ImprimirTabuleiro(mesa);
             }

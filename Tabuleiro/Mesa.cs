@@ -1,4 +1,4 @@
-﻿
+﻿using Erros;
 
 namespace Tabuleiro
 {
