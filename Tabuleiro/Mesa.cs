@@ -36,6 +36,18 @@ namespace Tabuleiro
             peca.Posicao = posicao;
         }
 
+        public Peca RetirarPeca(Posicao posicao)
+        {
+            if(PosicaoPeca(posicao)== null)
+            {
+                return null;
+            }
+            Peca atual = PosicaoPeca(posicao);
+            atual.Posicao = null;
+            Pecas[posicao.Linha, posicao.Coluna] = null;
+            return atual;
+        }
+
         public bool ExistePeca(Posicao posicao)
         {
             ValidarPosicao(posicao);

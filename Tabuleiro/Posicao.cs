@@ -19,12 +19,19 @@ namespace Tabuleiro
             Coluna = coluna;
         }
 
-        public void EntradaPosicao(char coluna, int linha)
+        public Posicao(char coluna, int linha)
         {
-            Linha = 8 - linha;
             Coluna = coluna - 'a';
+            Linha = 8 - linha;
+
         }
 
+        /*
+        public Posicao Movimentacao()
+        {
+            return new Posicao(8 - linha, coluna -'a');
+        }
+        */
         public override string ToString()
         {
             return Linha + ", " + Coluna;

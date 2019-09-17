@@ -37,6 +37,15 @@ namespace Xadrez
             Console.BackgroundColor = background;
         }
 
+        public static Posicao LeituraPosicao()
+        {
+            string posicao = Console.ReadLine();
+            char coluna = char.Parse(posicao[0] + "");
+            int linha = int.Parse(posicao[1] + "");
+
+            return new Posicao(coluna, linha);
+        }
+
         public static void ImprimePecas(Peca peca)
         {
             if (peca.Cor == Cor.Branca)
@@ -46,7 +55,7 @@ namespace Xadrez
             else
             {
                 ConsoleColor color = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write(peca);
                 Console.ForegroundColor = color;
             }
