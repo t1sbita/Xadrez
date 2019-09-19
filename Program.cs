@@ -21,6 +21,13 @@ namespace Xadrez
 
                     Console.WriteLine("Origem");
                     Posicao origem = Tela.LeituraPosicao();
+
+                    bool[,] posicoesPossiveis = iniciar.Mesa.PosicaoPeca(origem).MovimentosPossiveis();
+
+                    Console.Clear();
+
+                    Tela.ImprimirPossibilidades(iniciar.Mesa, posicoesPossiveis);
+
                     Console.WriteLine("Destino");
                     Posicao destino = Tela.LeituraPosicao();
                     iniciar.Movimentacao(origem, destino);

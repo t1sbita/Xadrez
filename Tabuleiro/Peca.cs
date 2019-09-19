@@ -2,13 +2,13 @@
 
 namespace Tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Mesa Mesa { get; protected set; }
         public Cor Cor { get; protected set; }
-        public int QtdeMovimento {get; protected set;}
-        
+        public int QtdeMovimento { get; protected set; }
+
 
         public Peca(Mesa mesa, Cor cor)
         {
@@ -18,10 +18,18 @@ namespace Tabuleiro
             QtdeMovimento = 0;
 
         }
-        
+
         public void IncrementarMovimento()
         {
             QtdeMovimento++;
         }
-    }
+
+        public abstract bool[,] MovimentosPossiveis();
+
+        public bool PodeMover(Posicao posicao)
+        {
+            Peca peca = Mesa.PosicaoPeca(posicao);
+            return peca == null || peca.Cor != Cor;
+        }
+    }   
 }

@@ -26,12 +26,13 @@ namespace Tabuleiro
 
         }
 
-        /*
-        public Posicao Movimentacao()
+        
+        public void DefinirPosicaoFutura(int linha, int coluna)
         {
-            return new Posicao(8 - linha, coluna -'a');
+            Linha = linha;
+            Coluna = coluna;
         }
-        */
+        
         public override string ToString()
         {
             return Linha + ", " + Coluna;

@@ -12,28 +12,47 @@ namespace Xadrez
             for (int i = 0; i < mesa.Linhas; i++)
             {
                 
-                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.Write(8 - i + " ");
                 Console.BackgroundColor = background;
                 for(int j = 0; j < mesa.Colunas; j++)
                 {
-                    if(mesa.IniciaPecas(i, j) == null)
-                    {
-                        Console.Write(" -");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                        ImprimePecas(mesa.IniciaPecas(i, j));
-                        
-                    }
+                    ImprimePecas(mesa.IniciaPecas(i, j));
                     
                 }
                 Console.WriteLine();
             }
             
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("   a b c d e f g h");
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("   a  b  c  d  e  f  g  h");
+            Console.BackgroundColor = background;
+        }
+
+        public static void ImprimirPossibilidades(Mesa mesa, bool[,] possiveisMovimentos)
+        {
+            ConsoleColor background = Console.BackgroundColor;
+
+            for (int i = 0; i < mesa.Linhas; i++)
+            {
+
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.Write(8 - i + " ");
+                Console.BackgroundColor = background;
+                for (int j = 0; j < mesa.Colunas; j++)
+                {
+                    if (possiveisMovimentos[i, j])
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                    }
+                    ImprimePecas(mesa.IniciaPecas(i, j));
+                    Console.BackgroundColor = background;
+
+                }
+                Console.WriteLine();
+            }
+
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("   a  b  c  d  e  f  g  h");
             Console.BackgroundColor = background;
         }
 
@@ -48,16 +67,26 @@ namespace Xadrez
 
         public static void ImprimePecas(Peca peca)
         {
-            if (peca.Cor == Cor.Branca)
+            if (peca == null)
             {
-                Console.Write(peca);
+                Console.Write(" - ");
+
             }
             else
             {
-                ConsoleColor color = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.Write(peca);
-                Console.ForegroundColor = color;
+                Console.Write(" ");
+                if (peca.Cor == Cor.Branca)
+                {
+                    Console.Write(peca);
+                }
+                else
+                {
+                    ConsoleColor color = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(peca);
+                    Console.ForegroundColor = color;
+                }
+                Console.Write(" ");
             }
         }
 

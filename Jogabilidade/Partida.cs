@@ -22,7 +22,7 @@ namespace Jogabilidade
         public void Movimentacao(Posicao origem, Posicao destino)
         {
             Peca pecaMovida = Mesa.RetirarPeca(origem);
-            if(Mesa.RetirarPeca(origem) == null)
+            if(pecaMovida == null)
             {
                 throw new Exceptions("Nenhuma Peça selecionada!");
             }
